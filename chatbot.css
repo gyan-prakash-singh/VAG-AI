@@ -103,3 +103,22 @@
     border-radius: 4px;
     cursor: pointer;
 }
+#chatbot-header {
+    background: #007bff;
+    color: white;
+    padding: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+}
+
+#chatbot-header button {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    margin-left: 8px;
+}
+
