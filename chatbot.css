@@ -121,4 +121,22 @@
     cursor: pointer;
     margin-left: 8px;
 }
+#chatbot-container.minimized {
+    height: 50px;
+    overflow: hidden;
+}
+
+#chatbot-minimize {
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#chatbot-close {
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
 
