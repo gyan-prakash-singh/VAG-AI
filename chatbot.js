@@ -54,7 +54,7 @@ function processInput() {
         addMessage("Sending your details...", "bot");
 
         // Submit to FormSubmit.co
-        fetch("https://formsubmit.co/ajax/YOUR_EMAIL_HERE?_redirect=none", {
+        fetch("https://formsubmit.co/ajax/vagaisolution@gmail.com?_redirect=none", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
