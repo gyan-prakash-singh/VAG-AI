@@ -545,6 +545,107 @@ section {
         font-size: 1rem;
     }
 }
+/* Enhanced Model Card Section */
+.enhanced-section {
+    padding: 80px 0;
+}
+
+.section-subtitle {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 18px;
+    color: #cccccc;
+}
+
+/* Grid */
+.enhanced-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+/* Premium Card UI */
+.premium-card {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 18px;
+    padding: 25px;
+    transition: 0.35s ease;
+    backdrop-filter: blur(12px);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.premium-card:hover {
+    transform: translateY(-8px);
+    border-color: #00aaff;
+    box-shadow: 0 8px 25px rgba(0, 170, 255, 0.25);
+}
+
+/* Icons */
+.ai-icon {
+    font-size: 40px;
+    margin-bottom: 18px;
+}
+
+/* Title */
+.premium-card h3 {
+    font-size: 20px;
+    margin-bottom: 12px;
+    font-weight: 600;
+    color: #fff;
+}
+
+/* Description */
+.premium-card p {
+    font-size: 15px;
+    color: #cccccc;
+    line-height: 1.6;
+}
+/* Premium Card UI With Strong Background Color */
+.premium-card {
+    background: linear-gradient(145deg, rgba(0, 45, 80, 0.85), rgba(0, 90, 140, 0.85));
+    border: 1px solid rgba(0, 150, 220, 0.3);
+    border-radius: 18px;
+    padding: 25px;
+    transition: 0.35s ease;
+    backdrop-filter: blur(10px);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+}
+
+.premium-card:hover {
+    transform: translateY(-8px);
+    background: linear-gradient(145deg, rgba(0, 90, 150, 0.95), rgba(0, 140, 210, 0.95));
+    border-color: #00c8ff;
+    box-shadow: 0 8px 25px rgba(0, 200, 255, 0.25);
+}
+
+/* Icon */
+.ai-icon {
+    font-size: 40px;
+    margin-bottom: 18px;
+    color: #ffffff;
+}
+
+/* Title */
+.premium-card h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #ffffff;
+}
+
+/* Description */
+.premium-card p {
+    font-size: 15px;
+    color: #e0e0e0;
+    line-height: 1.6;
+}
+
 
 
 
