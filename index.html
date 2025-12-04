@@ -40,7 +40,7 @@
 That Think Smarter, Act Faster, and Resolve Automatically.</h1>
         <p>Our AI agents collaborate, communicate, and execute end-to-end processes — just like your digital workforce.
 Fast to deploy, highly scalable, and industry-ready.</p>
-        <a href="#contact" class="btn-main">Book for Demo</a>
+        <button onclick="openForm()" class="button">Book for Demo</a>
     </div>
 
 </section>
@@ -479,7 +479,54 @@ Fast to deploy, highly scalable, and industry-ready.</p>
 <link rel="stylesheet" href="chatbot.css">
 <script src="chatbot.js"></script>
 
+<!-- ----- Pop up Container ----- --> 
+    <!-- Popup Container -->
+<div id="popupForm" class="popup">
+  <div class="popup-content">
+    <span class="close" onclick="closeForm()">&times;</span>
+    <h2>Book a Consultation</h2>
 
+    <form action="https://formsubmit.co/vagaisolution@gmail.com" method="POST">
+
+      <!-- FormSubmit settings -->
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://gyan-prakash-singh.github.io/VGA/thankyou.html">
+
+      <label>Name</label>
+      <input type="text" name="name" required>
+
+      <label>Email</label>
+      <input type="email" name="email" required>
+
+      <label>Phone</label>
+      <input type="text" name="phone" required>
+
+      <label>Message / Requirement</label>
+      <textarea name="message" rows="4" required></textarea>
+
+      <button type="submit" class="submit-btn">Submit</button>
+    </form>
+  </div>
+</div>
+
+<!-- JavaScript -->
+<script>
+  function openForm() {
+    document.getElementById("popupForm").style.display = "block";
+  }
+
+  function closeForm() {
+    document.getElementById("popupForm").style.display = "none";
+  }
+
+  // Close when clicking outside the modal
+  window.onclick = function(event) {
+    let modal = document.getElementById("popupForm");
+    if (event.target == modal) {
+      closeForm();
+    }
+  }
+</script>
 
 <!-- -------------------- CTA -------------------- -->
 <section class="cta" id="contact">
