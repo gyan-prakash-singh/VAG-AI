@@ -1,22 +1,37 @@
 let step = 0;
 let userData = { name: "", email: "", message: "" };
 
-document.getElementById("chatbot-button").onclick = () => {
-    document.getElementById("chatbot-container").classList.remove("hidden");
+const chatbotBtn = document.getElementById("chatbot-button");
+const chatbotContainer = document.getElementById("chatbot-container");
+const chatbotClose = document.getElementById("chatbot-close");
+const chatbotMinimize = document.getElementById("chatbot-minimize");
+
+// Toggle chatbot on floating button click
+chatbotBtn.onclick = () => {
+    chatbotContainer.classList.toggle("hidden");
 };
 
-document.getElementById("chatbot-close").onclick = () => {
-    document.getElementById("chatbot-container").classList.add("hidden");
+// Close completely
+chatbotClose.onclick = () => {
+    chatbotContainer.classList.add("hidden");
 };
 
+// Minimize
+chatbotMinimize.onclick = () => {
+    chatbotContainer.classList.add("hidden");
+};
+
+// Send message button
 document.getElementById("chatbot-send").onclick = () => {
     processInput();
 };
 
+// Enter key support
 document.getElementById("chatbot-input").addEventListener("keypress", (e) => {
     if (e.key === "Enter") processInput();
 });
 
+// Add messages to UI
 function addMessage(text, sender) {
     const msgBox = document.createElement("div");
     msgBox.className = "message " + sender;
@@ -27,6 +42,7 @@ function addMessage(text, sender) {
     chatArea.scrollTop = chatArea.scrollHeight;
 }
 
+// Chatbot flow logic
 function processInput() {
     const input = document.getElementById("chatbot-input");
     const text = input.value.trim();
@@ -41,19 +57,19 @@ function processInput() {
     }
     else if (step === 1) {
         userData.name = text;
-        addMessage("Great, " + text + "! What is your email?", "bot");
+        addMessage(`Nice to meet you, ${text}! What's your email?`, "bot");
         step = 2;
     }
     else if (step === 2) {
         userData.email = text;
-        addMessage("What can I help you with? Please describe your query.", "bot");
+        addMessage("What can I help you with today?", "bot");
         step = 3;
     }
     else if (step === 3) {
         userData.message = text;
         addMessage("Sending your details...", "bot");
 
-        // Submit to FormSubmit.co
+        // Send to FormSubmit
         fetch("https://formsubmit.co/ajax/vagaisolution@gmail.com?_redirect=none", {
             method: "POST",
             headers: {
@@ -66,15 +82,11 @@ function processInput() {
                 Query: userData.message
             })
         })
-        .then(res => res.json())
         .then(() => {
-            addMessage("Your details have been sent successfully! 🎉 Our team will contact you soon.", "bot");
+            addMessage("Your information has been sent successfully! 🎉", "bot");
         })
         .catch(() => {
-            addMessage("Something went wrong. Please try again later.", "bot");
+            addMessage("There was an error sending your details. Please try again later.", "bot");
         });
 
-        step = 0;
-        userData = { name: "", email: "", message: "" };
-    }
-}
+        // Reset after submission
